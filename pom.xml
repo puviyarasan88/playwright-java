@@ -1,14 +1,46 @@
-<project xmlns="https://maven.apache.org/POM/4.0.0" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>playwright-java</groupId>
   <artifactId>playwright-java</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  
-  <dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <groupId>org.apache.maven.plugins</groupId>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
     <dependency>
       <groupId>com.microsoft.playwright</groupId>
       <artifactId>playwright</artifactId>
       <version>1.49.0</version>
     </dependency>
-  </dependencies>
+    
+    <!-- https://mvnrepository.com/artifact/com.microsoft.playwright/assertions -->
+<dependency>
+    <groupId>com.microsoft.playwright</groupId>
+    <artifactId>assertions</artifactId>
+    <version>1.17.2</version>
+</dependency>
+        <dependency>
+            <artifactId>junit</artifactId>
+            <groupId>junit</groupId>
+            <version>4.13.1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <artifactId>junit-jupiter</artifactId>
+            <groupId>org.junit.jupiter</groupId>
+            <version>RELEASE</version>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
 </project>
