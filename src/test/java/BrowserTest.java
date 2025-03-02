@@ -1,7 +1,7 @@
-import com.microsoft.playwright.Browser;
-import com.microsoft.playwright.BrowserType;
-import com.microsoft.playwright.Page;
-import com.microsoft.playwright.Playwright;
+import com.microsoft.playwright.*;
+
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 public class BrowserTest {
 
@@ -11,13 +11,12 @@ public class BrowserTest {
 			{
 				try(Browser browser = playwright
 						.chromium()
-						.launch(new BrowserType.LaunchOptions().setHeadless(false)))
+						.launch(new BrowserType.LaunchOptions().setHeadless(true).setSlowMo(50)))
 				{
 					Page page = browser.newPage();
-
 					page.navigate("https://playwright.dev/java/docs/writing-tests");
-
-
+					page.screenshot(new Page.ScreenshotOptions()
+							.setPath(Paths.get(System.getProperty("user.dir")+"//screenshot//test.png")));
 				}
 
 
