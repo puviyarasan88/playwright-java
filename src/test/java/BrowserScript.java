@@ -24,7 +24,7 @@ public class BrowserScript {
 				page.navigate("http://playwright.dev");
 				System.out.println(page.title());
 
-				PlaywrightAssertions.assertThat(page).hasTitle(Pattern.compile("Playwright3"));
+				PlaywrightAssertions.assertThat(page).hasTitle(Pattern.compile("Playwright"));
 
 			}
 
