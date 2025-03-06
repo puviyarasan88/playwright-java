@@ -1,4 +1,5 @@
 import com.microsoft.playwright.*;
+import com.microsoft.playwright.assertions.PlaywrightAssertions;
 
 import java.nio.file.Paths;
 
@@ -9,7 +10,16 @@ public class ButtonAction {
         page.navigate("https://letcode.in/button");
         page.click("#home");
         page.goBack();
+//        page.pause();
+        String color = page.locator("//button[@id='property']").evaluate("ele => getComputedStyle(ele).color").toString();
+        System.out.println(color);
 
-        page.pdf(new Page.PdfOptions().setPath(Paths.get("output.pdf")));
+        Locator button= page.locator("//h2[contains(text(),'Button Hold')]");
+        button.hover();
+        page.mouse().down();
+        page.waitForTimeout(2000);
+        page.mouse().up();
+
+        PlaywrightAssertions.assertThat(page.locator("//h2[contains(text(),'1Button has been long pressed')]")).isVisible();
     }
 }
