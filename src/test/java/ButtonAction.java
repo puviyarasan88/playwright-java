@@ -19,6 +19,7 @@ public class ButtonAction {
         page.mouse().down();
         page.waitForTimeout(2000);
         page.mouse().up();
+        page.click("#Test");
 
         PlaywrightAssertions.assertThat(page.locator("//h2[contains(text(),'1Button has been long pressed')]")).isVisible();
     }
