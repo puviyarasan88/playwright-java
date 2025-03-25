@@ -1,7 +1,5 @@
-import com.microsoft.playwright.Browser;
-import com.microsoft.playwright.BrowserType;
-import com.microsoft.playwright.Page;
-import com.microsoft.playwright.Playwright;
+import com.microsoft.playwright.*;
+import com.microsoft.playwright.assertions.PlaywrightAssertions;
 
 public class InputField {
     public static void main(String[] args) {
@@ -24,7 +22,11 @@ public class InputField {
         System.out.println(name1);
 
         page.locator("#clearMe").clear();
-        page.locator("").isEnabled();
+//        PlaywrightAssertions.assertThat(page.locator("#noEdit")).isEditable();
+
+        Locator write = page.locator("#dontwrite");
+        PlaywrightAssertions.assertThat(write).isEnabled();
+        PlaywrightAssertions.assertThat(write).isEditable();
 
 
     }

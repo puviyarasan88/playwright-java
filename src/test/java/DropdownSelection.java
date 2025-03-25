@@ -10,8 +10,9 @@ public class DropdownSelection {
         Page page = browser.newPage();
         page.navigate("https://letcode.in/dropdowns");
         page.locator("#fruits").selectOption("Apple");
+
         page.locator("#superheros").selectOption(new String[]{"Aquaman", "Batman"});
-        page.locator("#superheros").selectOption(new SelectOption().setIndex(5));
+        page.locator("#lang").selectOption(new SelectOption().setIndex(5));
 
 
 
