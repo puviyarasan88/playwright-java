@@ -17,7 +17,6 @@ public class WebInput {
         page.navigate("https://practice.expandtesting.com/inputs");
         page.locator("#input-text").fill("12345");
         page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Display Inputs")).click();
-
         PlaywrightAssertions.assertThat(page.locator("#output-text")).containsText("989");
     }
 }

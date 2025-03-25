@@ -1,7 +1,6 @@
 import com.microsoft.playwright.*;
 import com.microsoft.playwright.assertions.PlaywrightAssertions;
 
-import java.nio.file.Paths;
 
 public class ButtonAction {
     public static void main(String[] args) {
@@ -17,7 +16,6 @@ public class ButtonAction {
         Locator button= page.locator("//h2[contains(text(),'Button Hold')]");
         button.hover();
         page.mouse().down();
-        page.waitForTimeout(2000);
         page.mouse().up();
         page.click("#Test");
 

@@ -18,5 +18,7 @@ public class WebInputValue {
         PlaywrightAssertions.assertThat(page.locator("#noEdit")).isDisabled();
         PlaywrightAssertions.assertThat(page.locator("#dontwrite")).isEditable();
 
+        page.locator("").click();
+
     }
 }
