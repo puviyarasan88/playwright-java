@@ -16,7 +16,7 @@ public class FrameLocator {
 //        {
 //            System.out.println(fra.title());
 //        }
-        Frame frameEle = page.frame("firstFr");
+        Frame frameEle = page.frame("hjii");
         frameEle.locator("input[name='fname']").fill("Pubi");
 
         page.frameLocator("iframe[name='firstFr']")
