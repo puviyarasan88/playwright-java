@@ -16,7 +16,7 @@ public class BrowserScript {
 		{
 			BrowserType browserType= playwright.chromium();
 
-			try(Browser browser = browserType.launch(new BrowserType.LaunchOptions().setHeadless(false)))
+			try(Browser browser = browserType.launch(new BrowserType.LaunchOptions().setHeadless(true)))
 
 			{
 				Page page = browser.newPage();
