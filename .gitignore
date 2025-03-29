@@ -1,5 +1,5 @@
 /target/
 .idea
-..classpath
+*.classpath
 *.pdf
 *.png
